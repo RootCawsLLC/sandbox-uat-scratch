@@ -1,0 +1,12 @@
+# NOT REAL EVIDENCE. Dummy workflow for grc-program UAT. Does not deploy anything.
+name: sandbox-uat-ci
+on: workflow_dispatch
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
